@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "hello nodejs",
   "main": "index.js",
-  "type": "module",
+ 
   "scripts": {
-    "start":"node index.js",
+    "start": "nodemon routes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Alfaz Bloch",
-  "license": "ISC"
+  "author": "Aditya Barad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
