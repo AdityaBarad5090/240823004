@@ -1,17 +1,17 @@
 import { Router } from "express";
-import { createstudent, deletestudent, getstudent, getstudents, updatestudnt } from "../controllers/studentcontrooler.js";
+import { createstudent, deletestudent, getstudent, getstudents, updatestudent } from "./studentcontroller.js";
 
-const router = new Router();
+const studentrouter = new Router();
 
-router.route('/')
-    .post(createstudent)
-    .get(getstudents)
+studentrouter.route("/")
+                .get(getstudents)
+                .post(createstudent)
 
-router.route('/:id')
-    .put(updatestudnt)
-    .delete(deletestudent)
-    .get(getstudent)
+studentrouter.route("/:id")
+                .get(getstudent)
+                .put(updatestudent)
+                .delete(deletestudent)
 
 export{
-    router
+    studentrouter
 }
