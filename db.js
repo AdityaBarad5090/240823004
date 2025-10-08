@@ -1,16 +1,16 @@
 import { Sequelize } from "sequelize";
 
 const db = new Sequelize("mca","root","",{
-    dialect:"mysql",
-    host:"localhost"
+    host:"localhost",
+    dialect:"mysql"
 })
 
 db.authenticate()
     .then(()=>{
-        console.log("Database Connected")
+        console.log("DB Connected")
     })
     .catch(()=>{
-        console.log("Error")
+        console.log("DB Connected Error")
     })
 
 export{
