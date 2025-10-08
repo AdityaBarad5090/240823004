@@ -288,3 +288,17 @@
 
 // console.log(sum(2,4));
 
+
+import express from "express";
+import { studentrouter } from "./studentroutes.js";
+
+const app=express();
+
+app.use(express.json())
+
+app.use("/student",studentrouter)
+
+app.listen(800,()=>{
+        console.log("Server Is Running")
+})
+
