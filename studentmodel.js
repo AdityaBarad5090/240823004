@@ -1,24 +1,34 @@
-import { DataTypes, Sequelize }  from "sequelize";
-import { db } from "../db.js";
+import { db } from "./db.js";
+import { DataTypes } from "sequelize";
 
-const Student = db.define('Students',{
+const student = db.define("student",{
     id:{
-       type: DataTypes.INTEGER,
-       primaryKey : true,
-       autoIncrement:true
+        primaryKey:true,
+        autoIncrement:true,
+        type:DataTypes.INTEGER
+       },
+    name:{
+        type:DataTypes.STRING,
+        allowNull:false
     },
-    name:DataTypes.STRING,
-    city:DataTypes.STRING,
-    gender:DataTypes.STRING,
-    age:DataTypes.INTEGER
+    age:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    city:{
+        type:DataTypes.STRING,
+        allowNull:false
+    }
 })
 
 db.sync()
-    .then(()=>{
-        console.log("Table Created")
-    })
-    .catch((Error) => {
-        console.log("Error",Error)
-    })
+   .then(()=>{
+     console.log("Table Created")
+   })
+   .catch(()=>{
+    console.log("Table Error")
+   })
 
-export default Student;
+export{
+    student
+}
